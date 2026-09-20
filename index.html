@@ -261,10 +261,18 @@
   .duo-inner .chat{ margin-bottom:34px; }
   .chat.in .bubble{
     animation:bubble-pop .4s cubic-bezier(.2,.8,.3,1.15) forwards;
+    animation-delay:calc(var(--i, 0) * .38s + .05s);
   }
-  .chat.in .bubble:nth-child(1){ animation-delay:.05s; }
-  .chat.in .bubble:nth-child(2){ animation-delay:.45s; }
-  .chat.in .bubble:nth-child(3){ animation-delay:.85s; }
+  .chat .bubble.her{
+    align-self:flex-end;
+    background:transparent;
+    border:1px dashed var(--line);
+    color:var(--paper-dim);
+    font-style:italic;
+    font-size:.92rem;
+    border-radius:20px 20px 6px 20px;
+  }
+  .chat-letter{ max-width:460px; margin-bottom:36px; }
   @keyframes bubble-pop{ to{ opacity:1; transform:none; } }
   @media (prefers-reduced-motion: reduce){
     .chat .bubble{ animation:none !important; opacity:1; transform:none; }
@@ -783,8 +791,8 @@
 <section class="song" id="song">
   <div class="wrap">
     <div class="chat reveal">
-      <p class="bubble">bon</p>
-      <p class="bubble q">tu mets quoi comme son, ces temps-ci ?</p>
+      <p class="bubble" style="--i:0">bon</p>
+      <p class="bubble q" style="--i:1">tu mets quoi comme son, ces temps-ci ?</p>
     </div>
     <div class="cassette blueprint-corners reveal">
       <span class="tag">🎧 On appuie play</span>
@@ -805,12 +813,17 @@
 
 <section class="message" id="message">
   <div class="blob b3" aria-hidden="true"></div>
-  <div class="chat reveal">
-    <p class="bubble">hey</p>
-    <p class="bubble q">comment tu vas, pour de vrai ?</p>
+  <div class="chat reveal chat-letter">
+    <p class="bubble" style="--i:0">hey</p>
+    <p class="bubble q" style="--i:1">comment tu vas ?</p>
+    <p class="bubble her" style="--i:2">(à toi de voir — vraiment, comment tu vas ?)</p>
+    <p class="bubble" style="--i:3">21 ans maintenant… tu vieillis hein 😏</p>
+    <p class="bubble q" style="--i:4">t'as fait quoi de beau cette année ?</p>
+    <p class="bubble her" style="--i:5">(vas-y, je t'écoute)</p>
+    <p class="bubble" style="--i:6">je n'étais pas sur ce parcours accrobranche avec toi — je le découvre en photos, comme pas mal de choses ces derniers temps</p>
+    <p class="bubble" style="--i:7">mais rien qu'à voir ton fou rire entre deux tyroliennes, j'ai l'impression d'y avoir été un peu 😂</p>
   </div>
   <div class="wrap letter reveal">
-    <p>Une année de plus, une raison de plus de faire du bruit pour toi. Je n'étais pas sur ce parcours accrobranche avec toi — je le découvre en photos, comme pas mal de choses ces derniers temps — mais rien qu'à voir ton fou rire entre deux tyroliennes, j'ai l'impression d'y avoir été un peu. 😂</p>
     <p>Cette année encore, on te souhaite tout ce que tu mérites : des fous rires qui font mal au ventre, des projets qui se réalisent, et des gens autour de toi qui t'aiment exactement comme tu es — rouge et noir dans l'âme, violette dans le cœur.</p>
     <p>Profite de ta journée, souris pour la photo, et laisse-toi gâter. C'est ton tour.</p>
     <div class="ps-note">
@@ -824,8 +837,8 @@
 <section class="duo" id="duo">
   <div class="wrap duo-inner reveal">
     <div class="chat reveal">
-      <p class="bubble">au fait</p>
-      <p class="bubble q">t'écris encore, de temps en temps ?</p>
+      <p class="bubble" style="--i:0">au fait</p>
+      <p class="bubble q" style="--i:1">t'écris encore, de temps en temps ?</p>
     </div>
     <div class="mode-switch" role="group" aria-label="Choisir le mode d'affichage">
       <button type="button" id="mode-poeme" aria-pressed="true">poème</button>
@@ -879,8 +892,8 @@
 
 <section id="gallery">
   <div class="chat reveal">
-    <p class="bubble">genre</p>
-    <p class="bubble q">tu te souviens de tout ça ?</p>
+    <p class="bubble" style="--i:0">genre</p>
+    <p class="bubble q" style="--i:1">tu te souviens de tout ça ?</p>
   </div>
   <p class="aside-note">(spoiler : je ne suis sur aucune de ces photos — je les ai juste regardées en boucle jusqu'à les connaître par cœur)</p>
   <div class="wrap reveal">
@@ -890,8 +903,8 @@
 
 <section class="clip" id="clip">
   <div class="chat reveal">
-    <p class="bubble">et sinon</p>
-    <p class="bubble q">ce petit playback improvisé devant le miroir, c'était quoi ça 😭</p>
+    <p class="bubble" style="--i:0">et sinon</p>
+    <p class="bubble q" style="--i:1">ce petit playback improvisé devant le miroir, c'était quoi ça 😭</p>
   </div>
   <p class="aside-note">(je ne l'ai pas vécu non plus — mais visiblement tu chantes aussi bien en playback qu'en vrai)</p>
   <div class="wrap reveal" style="text-align:center;">
@@ -905,8 +918,8 @@
 
 <section class="connect" id="connect">
   <div class="chat reveal">
-    <p class="bubble">bon sérieusement</p>
-    <p class="bubble q">quoi de neuf ?</p>
+    <p class="bubble" style="--i:0">bon sérieusement</p>
+    <p class="bubble q" style="--i:1">quoi de neuf ?</p>
   </div>
   <div class="wrap reveal" style="text-align:center;">
     <p class="connect-copy">Cette fois, c'est à toi de répondre — pour de vrai. On ne se parle plus autant qu'avant, mais ça ne dit rien de l'amitié, juste que la vie va vite. Le boulot, les projets, les poèmes que tu n'as montrés à personne : raconte-moi. Il y a toujours une place pour toi.</p>
