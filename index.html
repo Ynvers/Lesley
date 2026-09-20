@@ -987,7 +987,7 @@
     var fig = document.createElement('figure');
     var img = document.createElement('img');
     img.src = src;
-    img.loading = 'lazy';
+    img.decoding = 'async';
     img.alt = 'Souvenir ' + (idx + 1);
     fig.appendChild(img);
     fig.addEventListener('click', function(){ openLightbox(idx); });
