@@ -727,6 +727,12 @@
     color:var(--paper);
     letter-spacing:.02em;
   }
+  #preloader .preloader-msg{
+    margin-top:10px;
+    font-size:.82rem;
+    color:var(--paper-dim);
+    letter-spacing:.04em;
+  }
   #preloader.hidden{
     opacity:0;
     visibility:hidden;
@@ -747,6 +753,7 @@
 <div id="preloader" aria-hidden="true">
   <svg class="sparkle" viewBox="0 0 24 24" width="20" height="20" style="position:static; margin-bottom:14px;" aria-hidden="true"><path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="currentColor"/></svg>
   <span class="preloader-name">Lesley</span>
+  <span class="preloader-msg">un instant, ça arrive…</span>
 </div>
 
 <canvas id="confetti-canvas"></canvas>
@@ -986,8 +993,7 @@
   function hidePreloader(){
     if (preloader) preloader.classList.add('hidden');
   }
-  window.addEventListener('load', function(){ setTimeout(hidePreloader, 400); });
-  setTimeout(hidePreloader, 2500);
+  setTimeout(hidePreloader, 5000);
 
   // ---- gallery build ----
   var total = 14;
