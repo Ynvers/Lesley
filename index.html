@@ -1049,17 +1049,15 @@
     '08': "Perchée entre les arbres, l'air de trouver ça facile.",
     '09': "Peace sign en haut, parce que pourquoi pas.",
     '10': "Retour miroir, cheveux en mode grand luxe.",
+    '11': "Selfie improvisé, tête penchée, parce que l'angle classique c'est trop simple.",
     '12': "Petite pause selfie avec un des complices du jour.",
     '13': "Souvenir d'archive, parce que ce sourire mérite d'être ressorti.",
-    '14': "Le genre de selfie qu'on prend deux fois pour être sûre du bon angle."
+    '14': "Le même moment, vu sous un autre angle."
   };
-  // 11.jpg est un doublon de 14.jpg (même photo, autre rotation) : on ne la montre qu'une fois ici.
-  var skip = ['11'];
   var photos = [];
   var photoCaptions = [];
   for (var i = 1; i <= 14; i++){
     var n = (i < 10 ? '0' + i : '' + i);
-    if (skip.indexOf(n) !== -1) continue;
     photos.push('assets/img/' + n + '.jpg');
     photoCaptions.push(captions[n] || '');
   }
