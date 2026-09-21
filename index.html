@@ -257,6 +257,43 @@
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
   }
+  .chat{
+    position:relative; z-index:1;
+    max-width:420px;
+    margin:0 auto 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .chat .bubble{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    color:var(--paper);
+    padding:12px 18px;
+    border-radius:6px;
+    font-size:1rem;
+    line-height:1.4;
+    max-width:88%;
+  }
+  .chat .bubble.q{
+    background:var(--crimson);
+    border-color:transparent;
+    color:var(--paper);
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:1.15rem;
+  }
+  .chat .bubble.her{
+    align-self:flex-end;
+    background:transparent;
+    border:1px dashed var(--line);
+    color:var(--paper-dim);
+    font-style:italic;
+    font-size:.92rem;
+    border-radius:6px;
+  }
   .letter{
     position:relative; z-index:1;
     max-width:640px;
@@ -872,19 +909,21 @@
       <span class="eyebrow">Pour toi</span>
       <h2 class="headline">Fais-moi un petit <em>récap</em></h2>
     </div>
+    <div class="chat reveal">
+      <p class="bubble">hey</p>
+      <p class="bubble q">alors, c'était comment, cette journée ?</p>
+      <p class="bubble her">(à toi de voir)</p>
+      <p class="bubble q">raconte, qu'est-ce que t'as fait ?</p>
+      <p class="bubble her">(vas-y, je t'écoute)</p>
+      <p class="bubble q">et les cadeaux, ils t'ont plu ?</p>
+      <p class="bubble her">(dis-moi tout)</p>
+      <p class="bubble">j'espère qu'on t'a bien gâtée aujourd'hui</p>
+    </div>
     <div class="letter reveal">
-      <p>Hey. Ça fait un bail, hein, je sais.</p>
-      <p class="interview-q">Comment tu vas, vraiment ?</p>
-      <p>Pas le « ça va » de politesse. Cette année, qu'est-ce qu'il s'est passé de bien ? Et de moins bien ?</p>
-      <p>21 ans maintenant, le temps passe beaucoup trop vite.</p>
-      <p class="interview-q">Les gens autour de toi, ils te traitent bien au moins ?</p>
-      <p>Sinon tu me le dis, je débarque.</p>
-      <p class="interview-q">Le boulot, les études que tu as bouclées, le cœur : est-ce que tout ça suit ?</p>
-      <p>Je ne juge pas, je m'inquiète juste un peu. Beaucoup.</p>
       <p>Bref. Tu me manques, tu sais.</p>
       <p class="interview-q">Toujours team rouge et noir, ou le violet a fini par gagner ?</p>
       <p>Cette année, je te souhaite ce que <em>toi</em> tu veux vraiment, pas la version polie qu'on souhaite par automatisme. Des fous rires qui font mal au ventre, des projets qui aboutissent enfin, et des gens autour de toi qui te voient exactement comme tu es : rouge et noir dans l'âme, violette dans le cœur.</p>
-      <p>Profite de ta journée. Souris pour la photo, laisse-toi gâter, et pour une fois, arrête de tout minimiser. C'est ton tour, Lesley.</p>
+      <p>J'espère que tu as profité de ta journée, que tu as souri pour les photos, que tu t'es laissée gâter, et que pour une fois, tu n'as rien minimisé. C'était ton tour, Lesley.</p>
       <div class="ps-note">
         <p><strong>P.S.</strong> : On se parle plus trop en ce moment, la vie fait ça parfois. Mais sache un truc : peu importe le temps qui passe, tu fais partie de mon cœur, comme dans <em>Kingdom&nbsp;Hearts</em>, ce jeu où on garde toujours une petite lumière du cœur des gens qu'on aime, même loin d'eux. 🗝️🖤</p>
       </div>
