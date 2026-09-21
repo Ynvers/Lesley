@@ -557,6 +557,50 @@
     font-size:clamp(1.3rem,3vw,1.7rem);
     color:var(--paper);
   }
+  .acrostic{
+    max-width:600px;
+    margin:0 0 34px;
+  }
+  .acrostic p{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:clamp(1.1rem,2.4vw,1.35rem);
+    line-height:1.6;
+    color:var(--paper);
+    margin:0 0 14px;
+  }
+  .acrostic .letter{
+    font-style:normal;
+    font-weight:700;
+    font-size:1.6em;
+    color:var(--crimson);
+    margin-right:2px;
+    font-family:'Fraunces', serif;
+  }
+  .poem-filmstrip{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    max-width:100%;
+    margin:0 0 34px;
+    padding-bottom:6px;
+  }
+  .poem-filmstrip img{
+    width:110px;
+    height:140px;
+    object-fit:cover;
+    flex:0 0 auto;
+    box-shadow:var(--shadow);
+  }
+  .poem-close{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:clamp(1.1rem,2.4vw,1.35rem);
+    line-height:1.7;
+    color:var(--violet-soft);
+    max-width:600px;
+    margin:0;
+  }
   .quote-mark{
     display:inline-block;
     font-size:2.4rem;
@@ -948,30 +992,24 @@
       <div class="poem-flow">
         <p class="poem-open"><span class="quote-mark" aria-hidden="true">"</span>Lesley, avant que cette journée se termine,</p>
 
-        <div class="poem-stanza">
-          <div class="stanza-photo"><img src="assets/img/02.jpg" alt="" loading="lazy" /></div>
-          <p class="stanza-text">ton rire part toujours un peu trop fort,<br/>jamais retenu, jamais poli,<br/>et il suffit à réchauffer une pièce entière<br/>sans que tu t'en rendes compte.</p>
+        <div class="acrostic">
+          <p><span class="letter">L</span>umineuse, même les soirs où t'as pas envie de l'être.</p>
+          <p><span class="letter">E</span>ntêtée juste assez pour ne jamais rien lâcher.</p>
+          <p><span class="letter">S</span>ecrète sur ce qui compte vraiment pour toi.</p>
+          <p><span class="letter">L</span>oyale, même à travers les silences trop longs.</p>
+          <p><span class="letter">E</span>tonnante, dans les détails que personne ne remarque.</p>
+          <p><span class="letter">Y</span>'a que toi pour rendre une journée normale mémorable.</p>
         </div>
 
-        <div class="poem-stanza">
-          <div class="stanza-photo"><img src="assets/img/04.jpg" alt="" loading="lazy" /></div>
-          <p class="stanza-text">tu poses des questions que personne d'autre ne pose,<br/>et tu écoutes vraiment les réponses,<br/>si bien que les gens repartent<br/>un peu plus grands après t'avoir parlé.</p>
+        <div class="poem-filmstrip" aria-hidden="true">
+          <img src="assets/img/02.jpg" alt="" loading="lazy" />
+          <img src="assets/img/04.jpg" alt="" loading="lazy" />
+          <img src="assets/img/06.jpg" alt="" loading="lazy" />
+          <img src="assets/img/08.jpg" alt="" loading="lazy" />
+          <img src="assets/img/11.jpg" alt="" loading="lazy" />
         </div>
 
-        <div class="poem-stanza">
-          <div class="stanza-photo"><img src="assets/img/06.jpg" alt="" loading="lazy" /></div>
-          <p class="stanza-text">tu te souviens des petits détails,<br/>un prénom, une date, une préférence oubliée,<br/>des trucs que moi-même j'ai oubliés,<br/>et toi, tu les gardes quelque part.</p>
-        </div>
-
-        <div class="poem-stanza">
-          <div class="stanza-photo"><img src="assets/img/08.jpg" alt="" loading="lazy" /></div>
-          <p class="stanza-text">tu tombes, tu te relèves,<br/>tu ne fais pas semblant que ça n'a pas fait mal,<br/>mais tu avances quand même,<br/>et ça, c'est plus impressionnant que tout le reste.</p>
-        </div>
-
-        <div class="poem-stanza">
-          <div class="stanza-photo"><img src="assets/img/11.jpg" alt="" loading="lazy" /></div>
-          <p class="stanza-text">alors avant de dormir, simplement :<br/>merci d'être exactement comme tu es.<br/>joyeux anniversaire, Lesley.</p>
-        </div>
+        <p class="poem-close">Alors avant de dormir, simplement : merci d'être exactement comme tu es. Joyeux anniversaire, Lesley.</p>
       </div>
     </div>
 
