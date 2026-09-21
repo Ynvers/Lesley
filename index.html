@@ -707,6 +707,35 @@
     z-index:200;
   }
 
+  /* ---------- preloader ---------- */
+  #preloader{
+    position:fixed;
+    inset:0;
+    z-index:300;
+    background:var(--void);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:var(--violet-soft);
+    transition:opacity .6s ease, visibility .6s ease;
+  }
+  #preloader .preloader-name{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.6rem;
+    color:var(--paper);
+    letter-spacing:.02em;
+  }
+  #preloader.hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    #preloader{ transition:none; }
+  }
+
   :focus-visible{
     outline:2px solid var(--violet-soft);
     outline-offset:3px;
@@ -714,6 +743,11 @@
 </style>
 </head>
 <body>
+
+<div id="preloader" aria-hidden="true">
+  <svg class="sparkle" viewBox="0 0 24 24" width="20" height="20" style="position:static; margin-bottom:14px;" aria-hidden="true"><path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="currentColor"/></svg>
+  <span class="preloader-name">Lesley</span>
+</div>
 
 <canvas id="confetti-canvas"></canvas>
 
@@ -946,6 +980,14 @@
 <script>
 (function(){
   "use strict";
+
+  // ---- preloader ----
+  var preloader = document.getElementById('preloader');
+  function hidePreloader(){
+    if (preloader) preloader.classList.add('hidden');
+  }
+  window.addEventListener('load', function(){ setTimeout(hidePreloader, 400); });
+  setTimeout(hidePreloader, 2500);
 
   // ---- gallery build ----
   var total = 14;
