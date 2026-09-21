@@ -1080,15 +1080,11 @@
       <span class="eyebrow">Une dernière chose</span>
       <h2 class="headline">C'est quoi tes envies pour <em>l'année prochaine</em> ?</h2>
     </div>
-    <p class="connect-copy">Un objectif, un souhait, une bêtise à faire, une promesse : écris-le là où ça part vraiment tout seul dans un an, sans que personne ait besoin de s'en souvenir. À toi de choisir qui la reçoit.</p>
-    <div class="mode-switch" role="group" aria-label="À qui confier la capsule" style="justify-content:center;">
-      <button type="button" id="capsule-nathan" aria-pressed="true">Je te la confie</button>
-      <button type="button" id="capsule-self" aria-pressed="false">Je la garde pour moi</button>
-    </div>
+    <p class="connect-copy">Un objectif, un souhait, une bêtise à faire, une promesse : laisse-toi une lettre pour plus tard, celle que tu liras dans un an, le jour de tes 22 ans.</p>
     <div class="capsule-box">
       <button type="button" class="mail-btn" id="capsule-send">Sceller la capsule 🔒</button>
     </div>
-    <p class="aside-note" id="capsule-hint">(ça copie ton texte et ouvre FutureMe.org dans un nouvel onglet : colle-le (Ctrl+V), choisis "1 an" comme date, mets <strong>luzolo.adoho@gmail.com</strong> comme mail, et laisse-les faire le reste. C'est un vrai service d'envoi programmé, ça part sans que je doive m'en souvenir.)</p>
+    <p class="aside-note" id="capsule-hint">(ça ouvre FutureMe.org dans un nouvel onglet : écris ta lettre là-bas, choisis "1 an" comme date, mets ton propre mail, et laisse-les faire le reste. C'est un vrai service d'envoi programmé, ça part tout seul.)</p>
   </div>
 </section>
 
@@ -1242,24 +1238,6 @@
 
   // ---- time capsule (FutureMe.org) ----
   var capsuleBtn = document.getElementById('capsule-send');
-  var capsuleHint = document.getElementById('capsule-hint');
-  var btnNathan = document.getElementById('capsule-nathan');
-  var btnSelf = document.getElementById('capsule-self');
-  var capsuleToSelf = false;
-
-  function setCapsuleMode(toSelf){
-    capsuleToSelf = toSelf;
-    btnNathan.setAttribute('aria-pressed', String(!toSelf));
-    btnSelf.setAttribute('aria-pressed', String(toSelf));
-    capsuleHint.innerHTML = toSelf
-      ? '(ça ouvre FutureMe.org dans un nouvel onglet : écris ta capsule là-bas, choisis "1 an" comme date, mets <strong>ton propre mail</strong>, et laisse-les faire le reste. C\'est un vrai service d\'envoi programmé, ça part tout seul.)'
-      : '(ça ouvre FutureMe.org dans un nouvel onglet : écris ta capsule là-bas, choisis "1 an" comme date, mets <strong>luzolo.adoho@gmail.com</strong> comme mail, et laisse-les faire le reste. C\'est un vrai service d\'envoi programmé, ça part sans que je doive m\'en souvenir.)';
-  }
-  if (btnNathan && btnSelf){
-    btnNathan.addEventListener('click', function(){ setCapsuleMode(false); });
-    btnSelf.addEventListener('click', function(){ setCapsuleMode(true); });
-  }
-
   if (capsuleBtn){
     capsuleBtn.addEventListener('click', function(){
       window.open('https://www.futureme.org/letters/new', '_blank', 'noopener');
