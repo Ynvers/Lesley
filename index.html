@@ -680,6 +680,22 @@
     max-width:42ch;
     margin:0 auto 34px;
   }
+  .closing-poem{
+    position:relative; z-index:1;
+    max-width:46ch;
+    margin:0 auto 40px;
+    text-align:left;
+  }
+  .closing-poem p{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.08rem;
+    line-height:1.7;
+    color:var(--paper);
+    max-width:none;
+    margin:0 0 20px;
+  }
+  .closing-poem p:last-child{ margin-bottom:0; }
   .confetti-btn{
     position:relative; z-index:1;
     font-family:'Work Sans', sans-serif;
@@ -975,7 +991,12 @@
 <footer>
   <svg class="accent-block" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,21.35 L10.55,20.03 C5.4,15.36 2,12.28 2,8.5 C2,5.42 4.42,3 7.5,3 C9.24,3 10.91,3.81 12,5.09 C13.09,3.81 14.76,3 16.5,3 C19.58,3 22,5.42 22,8.5 C22,12.28 18.6,15.36 13.45,20.04 L12,21.35 Z"/></svg>
   <h2>Encore une fois,<br/>joyeux anniversaire 🎉</h2>
-  <p>Que cette nouvelle année t'apporte tout le rouge, le noir et le violet que ton cœur peut contenir.</p>
+  <div class="closing-poem">
+    <p>J'espère que tu as passé une belle journée, une vraie, pas juste une journée qui passe. Qu'on t'a laissée souffler, qu'on t'a fait rire, qu'on t'a un peu trop gâtée.</p>
+    <p>Pour cette nouvelle année, je te souhaite moins de doutes et plus de vers libres, des gens qui te voient telle que tu es, et le culot de prendre toute la place que tu occupes déjà sans le savoir.</p>
+    <p>Et voilà. Ceci marque la fin de mon cadeau. (Enfin, presque, il reste les confettis.)</p>
+    <p>Une dernière chose avant de partir : je suis sûre que t'as crié comme un goéland sur cette tyrolienne. Assume.</p>
+  </div>
   <button class="confetti-btn" id="confetti-btn">Fais péter les confettis</button>
   <p class="credit">Site fait par Nathan, avec ❤️, pour Lesley</p>
 </footer>
