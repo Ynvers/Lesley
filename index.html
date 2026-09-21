@@ -130,7 +130,7 @@
     background:var(--crimson);
     transform:scale(1.4);
   }
-  @media (max-width:720px){ .navdots{display:none;} }
+  @media (max-width:720px){ .navdots{ right:10px; gap:10px; } }
 
   /* ---------- hero ---------- */
   .hero{
@@ -145,10 +145,13 @@
   }
   .hero .accent-block{
     position:absolute;
-    width:130px; height:130px;
-    background:var(--crimson);
-    top:8%; left:8%;
+    width:120px; height:120px;
+    color:var(--crimson);
+    top:2%; left:5%;
     z-index:0;
+  }
+  @media (max-width:640px){
+    .hero .accent-block{ width:64px; height:64px; top:1%; left:6%; }
   }
   .hero .accent-line{
     position:absolute;
@@ -658,11 +661,11 @@
   }
   footer .accent-block{
     position:absolute;
-    width:160px; height:160px;
-    background:var(--violet);
-    opacity:.25;
-    left:50%; top:-40px;
-    transform:translateX(-50%) rotate(12deg);
+    width:150px; height:150px;
+    color:var(--crimson);
+    opacity:.9;
+    left:50%; top:-20px;
+    transform:translateX(-50%);
     z-index:0;
   }
   footer h2{
@@ -770,7 +773,7 @@
 </nav>
 
 <section class="hero" id="hero">
-  <div class="accent-block" aria-hidden="true"></div>
+  <svg class="accent-block" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,21.35 L10.55,20.03 C5.4,15.36 2,12.28 2,8.5 C2,5.42 4.42,3 7.5,3 C9.24,3 10.91,3.81 12,5.09 C13.09,3.81 14.76,3 16.5,3 C19.58,3 22,5.42 22,8.5 C22,12.28 18.6,15.36 13.45,20.04 L12,21.35 Z"/></svg>
   <div class="accent-line" aria-hidden="true"></div>
   <svg class="sparkle" viewBox="0 0 24 24" width="22" height="22" style="top:14%; left:62%;" aria-hidden="true"><path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="currentColor"/></svg>
   <span class="eyebrow">Édition spéciale anniversaire</span>
@@ -970,7 +973,7 @@
 </section>
 
 <footer>
-  <div class="accent-block" aria-hidden="true"></div>
+  <svg class="accent-block" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,21.35 L10.55,20.03 C5.4,15.36 2,12.28 2,8.5 C2,5.42 4.42,3 7.5,3 C9.24,3 10.91,3.81 12,5.09 C13.09,3.81 14.76,3 16.5,3 C19.58,3 22,5.42 22,8.5 C22,12.28 18.6,15.36 13.45,20.04 L12,21.35 Z"/></svg>
   <h2>Encore une fois,<br/>joyeux anniversaire 🎉</h2>
   <p>Que cette nouvelle année t'apporte tout le rouge, le noir et le violet que ton cœur peut contenir.</p>
   <button class="confetti-btn" id="confetti-btn">Fais péter les confettis</button>
