@@ -416,8 +416,22 @@
   .lightbox.open{ display:flex; }
   .lightbox img{
     max-width:min(920px,92vw);
-    max-height:82vh;
+    max-height:78vh;
     box-shadow:0 30px 80px rgba(0,0,0,.6);
+  }
+  .lb-figure{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+  #lb-caption{
+    color:var(--paper-dim);
+    font-style:italic;
+    font-size:.95rem;
+    max-width:60ch;
+    text-align:center;
   }
   .lightbox button{
     position:absolute;
@@ -1004,7 +1018,10 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo en grand">
   <button class="close" id="lb-close" aria-label="Fermer">✕</button>
   <button class="prev" id="lb-prev" aria-label="Photo précédente">‹</button>
-  <img id="lb-img" src="" alt="" />
+  <figure class="lb-figure">
+    <img id="lb-img" src="" alt="" />
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
   <button class="next" id="lb-next" aria-label="Photo suivante">›</button>
 </div>
 
@@ -1020,12 +1037,31 @@
   setTimeout(hidePreloader, 5000);
 
   // ---- gallery build ----
-  var total = 14;
   var grid = document.getElementById('gallery-grid');
+  var captions = {
+    '01': "Gants verts, sourire large : le kit officiel du parcours.",
+    '02': "Le fou rire de la copine à côté résume bien l'ambiance de la journée.",
+    '03': "Mode miroir activé, avant que la vraie aventure commence.",
+    '04': "On enfile les gants ensemble, mais visiblement pas au même rythme.",
+    '05': "Ce moment gênant juste avant de sauter dans le vide.",
+    '06': "Accrochée à la tyrolienne, prête à hurler comme un goéland.",
+    '07': "Le sourire d'avant-course, encore toutes ses dents.",
+    '08': "Perchée entre les arbres, l'air de trouver ça facile.",
+    '09': "Peace sign en haut, parce que pourquoi pas.",
+    '10': "Retour miroir, cheveux en mode grand luxe.",
+    '12': "Petite pause selfie avec un des complices du jour.",
+    '13': "Souvenir d'archive, parce que ce sourire mérite d'être ressorti.",
+    '14': "Le genre de selfie qu'on prend deux fois pour être sûre du bon angle."
+  };
+  // 11.jpg est un doublon de 14.jpg (même photo, autre rotation) : on ne la montre qu'une fois ici.
+  var skip = ['11'];
   var photos = [];
-  for (var i = 1; i <= total; i++){
+  var photoCaptions = [];
+  for (var i = 1; i <= 14; i++){
     var n = (i < 10 ? '0' + i : '' + i);
+    if (skip.indexOf(n) !== -1) continue;
     photos.push('assets/img/' + n + '.jpg');
+    photoCaptions.push(captions[n] || '');
   }
   photos.forEach(function(src, idx){
     var fig = document.createElement('figure');
@@ -1041,6 +1077,7 @@
   // ---- lightbox ----
   var lightbox = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
+  var lbCaption = document.getElementById('lb-caption');
   var current = 0;
 
   function openLightbox(idx){
@@ -1051,6 +1088,7 @@
   function updateLightbox(){
     lbImg.src = photos[current];
     lbImg.alt = 'Souvenir ' + (current + 1);
+    if (lbCaption) lbCaption.textContent = photoCaptions[current] || '';
   }
   function closeLightbox(){ lightbox.classList.remove('open'); }
   function nextImg(){ current = (current + 1) % photos.length; updateLightbox(); }
